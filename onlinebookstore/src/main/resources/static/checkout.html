@@ -64,7 +64,7 @@ document.getElementById("checkoutForm").addEventListener("submit", function (e) 
     return;
   }
 
-  fetch(`/api/cart/place-order/${userId}`, {
+  fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/cart/place-order/${userId}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ fullName, phone, address, payment })

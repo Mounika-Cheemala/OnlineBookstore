@@ -48,7 +48,7 @@ if (!orderId) {
 }
 
 
-fetch(`/api/orders/${orderId}`)
+fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/orders/${orderId}`)
   .then(res => res.json())
   .then(order => {
     document.getElementById("invoiceNumber").textContent = "INV" + order.id.toString().padStart(5, "0");

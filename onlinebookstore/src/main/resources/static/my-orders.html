@@ -24,7 +24,7 @@ if (!userId) {
 }
 
 function loadOrders() {
-  fetch(`/api/orders/user/${userId}`)
+  fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/orders/user/${userId}`)
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById('ordersList');

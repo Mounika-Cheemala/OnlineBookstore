@@ -76,7 +76,7 @@ function renderBooks(books) {
   document.querySelectorAll(".add-to-cart").forEach(button => {
     button.addEventListener("click", function () {
       const bookId = parseInt(this.getAttribute("data-book-id"));
-      fetch("/api/cart/add", {
+      fetch("https://onlinebookstore-production-0f47.up.railway.app/api/cart/add", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -126,7 +126,7 @@ function applyFilters() {
 }
 
 // Fetch all books initially
-fetch("/api/books")
+fetch("https://onlinebookstore-production-0f47.up.railway.app/api/books")
   .then(res => res.json())
   .then(data => {
     allBooks = data;

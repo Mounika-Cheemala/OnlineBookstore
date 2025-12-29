@@ -29,7 +29,7 @@
       window.location.href = "book-list.html";
     }
 
-    fetch(`/api/books/${bookId}`)
+    fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/books/${bookId}`)
       .then(res => res.json())
       .then(book => {
         const container = document.getElementById("bookDetails");
@@ -52,7 +52,7 @@
         alert("Please log in first!");
         return;
       }
-      fetch(`/api/cart/add?userId=${userId}&bookId=${bookId}&quantity=1`, {
+      fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/cart/add?userId=${userId}&bookId=${bookId}&quantity=1`, {
         method: "POST"
       })
         .then(res => {

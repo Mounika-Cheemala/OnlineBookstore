@@ -27,7 +27,7 @@
       const newName = document.getElementById("newName").value;
       const newPass = document.getElementById("newPass").value;
 
-      fetch(`/api/users/${user.id}`, {
+      fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/users/${user.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

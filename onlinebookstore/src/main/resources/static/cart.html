@@ -34,7 +34,7 @@ if (!userId) {
   const totalDiv = document.getElementById("total-amount");
 
 function loadCart() {
-  fetch(`/api/cart/user/${userId}`)
+  fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/cart/user/${userId}`)
     .then(response => response.json())
     .then(data => {
       console.log("Fetched cart data:", data);
@@ -78,7 +78,7 @@ function loadCart() {
 function removeFromCart(cartItemId) {
   if (!confirm("Are you sure you want to remove this item?")) return;
 
-  fetch(`/api/cart/remove/${cartItemId}`, {
+  fetch(`https://onlinebookstore-production-0f47.up.railway.app/api/cart/remove/${cartItemId}`, {
     method: "DELETE"
   })
     .then(response => {
