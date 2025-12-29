@@ -20,20 +20,20 @@ public class UserController {
     @Autowired
     private UserRepository userRepo;
 
-    // 🔹 Get user by ID (optional, in case you need to fetch again)
+    //  Get user by ID (optional, in case you need to fetch again)
     @GetMapping("/{id}")
     public User getUser(@PathVariable int id) {
         return userRepo.findById(id).orElse(null);
     }
 
-    // 🔹 Update user profile (name, password)
+    //  Update user profile (name, password)
     @PutMapping("/{id}")
     public User updateUser(@PathVariable int id, @RequestBody User updatedUser) {
         return userRepo.findById(id).map(user -> {
             user.setName(updatedUser.getName());
-            user.setPassword(updatedUser.getPassword()); // Note: hash this in production
-            user.setEmail(updatedUser.getEmail());       // Optional: allow email change
-            user.setRole(updatedUser.getRole());         // Optional: not typically user-editable
+            user.setPassword(updatedUser.getPassword()); 
+            user.setEmail(updatedUser.getEmail());       
+            user.setRole(updatedUser.getRole());         
             return userRepo.save(user);
         }).orElse(null);
     }

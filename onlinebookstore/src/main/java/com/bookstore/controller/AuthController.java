@@ -28,8 +28,7 @@ public class AuthController {
         if (existingUser.isPresent()) {
             return ResponseEntity.badRequest().body("Email already registered.");
         }
-        user.setRole(User.Role.USER); // ✅
- // Default role
+        user.setRole(User.Role.USER); 
         userRepo.save(user);
         return ResponseEntity.ok("User registered successfully!");
     }

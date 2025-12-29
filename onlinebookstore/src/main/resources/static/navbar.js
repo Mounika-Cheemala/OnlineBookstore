@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nav.innerHTML = `
     <div class="container">
-      <a class="navbar-brand" href="#">📚 Bookstore ${user.role === "ADMIN" ? "Admin" : ""}</a>
+      <a class="navbar-brand" href="#">📚 InkNest ${user.role === "ADMIN" ? "Admin" : ""}</a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@ function updateCartCount() {
 
   if (!userId) return;
 
-  fetch(`http://localhost:8080/api/cart/user/${userId}`)
+  fetch(`/api/cart/user/${userId}`)
     .then(res => res.json())
     .then(data => {
       const count = data.length;

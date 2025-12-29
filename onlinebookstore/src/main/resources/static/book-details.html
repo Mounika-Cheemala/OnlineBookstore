@@ -11,6 +11,7 @@
       object-fit: cover;
     }
   </style>
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
   <div class="container mt-5">
@@ -28,7 +29,7 @@
       window.location.href = "book-list.html";
     }
 
-    fetch(`http://localhost:8080/api/books/${bookId}`)
+    fetch(`/api/books/${bookId}`)
       .then(res => res.json())
       .then(book => {
         const container = document.getElementById("bookDetails");
@@ -51,7 +52,7 @@
         alert("Please log in first!");
         return;
       }
-      fetch(`http://localhost:8080/api/cart/add?userId=${userId}&bookId=${bookId}&quantity=1`, {
+      fetch(`/api/cart/add?userId=${userId}&bookId=${bookId}&quantity=1`, {
         method: "POST"
       })
         .then(res => {

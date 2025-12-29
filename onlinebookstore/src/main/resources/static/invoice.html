@@ -48,7 +48,7 @@ if (!orderId) {
 }
 
 
-fetch(`http://localhost:8080/api/orders/${orderId}`)
+fetch(`/api/orders/${orderId}`)
   .then(res => res.json())
   .then(order => {
     document.getElementById("invoiceNumber").textContent = "INV" + order.id.toString().padStart(5, "0");

@@ -93,7 +93,6 @@ public String placeOrder(@PathVariable int userId, @RequestBody Map<String, Stri
         return "Cart is empty!";
     }
 
-    // ✅ Log additional data from the form
     String fullName = data.get("fullName");
     String address = data.get("address");
     String phone = data.get("phone");
