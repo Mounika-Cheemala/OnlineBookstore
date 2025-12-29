@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["jdk17"]
+
+[phases.build]
+cmds = ["cd onlinebookstore && ./mvnw clean package"]
+
+[start]
+cmd = "cd onlinebookstore && java -jar target/*.jar"
